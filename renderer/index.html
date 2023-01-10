@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- http-equiv="Content-Security-Policy" 告知哪些檔案是安全的 -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+    <title>Dummy Image Maker</title>
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <h1>圖片產生器</h1>
+    <form>
+        <label for="width">寬(px): </label><input required type="number" id="width" min="0" max="1000" />
+        <label for="height">高(px): </label><input required type="number" id="height" min="0" max="1000" />
+        <label for="fontSize">字體大小(px): </label><input required type="number" id="fontSize" min="0" max="10" />
+        <button id="submitBtn" type="submit" onsubmit="generatePicture(e)">產生圖片</button>
+    </form>
+    <canvas id="myCanvas" width="0" height="0" style="background-color:rgb(153, 153, 153)"></canvas>
+    <button style="display: none;" id="downloadBtn" onclick="downloadImg()">下載圖片</button>
+</body>
+</html>
